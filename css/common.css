@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, WenQuanYi Micro Hei, Microsoft Yahei, sans-serif;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+input:-webkit-autofill { 
+	-webkit-box-shadow: 0 0 0px 1000px #2390cc inset; 
+}
+body {
+	max-width: 640px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+
+/* ========== */
+/* = 字体大小 = */
+/* ========== */
+.FontSize-S{
+	font-size: 0.2rem;
+}
+.FontSize-M{
+	font-size: 0.24rem;
+}
+.FontSize-L{
+	font-size: 0.28rem;
+}
+.FontSize-XL{
+	font-size: 0.32rem;
+}
