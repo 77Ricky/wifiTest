@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="./css/wifi.css" />
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<script type="text/javascript" src="./scripts/viewport.js"></script>
+		<script type="text/javascript" src="./scripts/register.js"></script>
+		<title>中国联航机场免费WIFI登录</title>
+	</head>
+
+	<body>
+		<div class="wifi-content">
+			<div class="top">
+				<span class="topSpan FontSize-M">中国联航机场免费WIFI登录</span>
+			</div>
+			<div class="title"></div>
+			<div class="login-content">
+				<div class="telphone-login">
+					<div class="login-user-Wrap"> 
+						<span class="login-input-tip">手机号码 |</span>
+						<span class="login-input-info">
+							<input type="text" placeholder="请输入手机号码"/>
+						</span>
+					</div>
+					<div class="login-user-Wrap">
+						<span class="login-input-tip">验&nbsp;证&nbsp;码&nbsp; |</span>
+						<span class="login-input-info">
+							<input type="text" id="phoneCodeInput" placeholder="请输入验证码"/>
+						</span>
+						<!-- <a href="javascript:void(0);" class="getTelCodeBtn changeBacColor">60S后重新输入</a> -->
+					</div>
+					<div class="login-user-btn">
+						<button class="getTelCodeBtn getcode" onclick="sendMobileCaptcha();">获取短信验证码</button>
+					</div>
+					<div class="login-user-btn">
+						<button class="getTelCodeBtn connect">连接网络</button>
+					</div>
+					<div class="login-user-btn loginBtn">
+						<span class="FontSize-S">还不是联航会员？</span>
+						<a href="javascript:void(0);" class="getTelCodeBtn redbg ml0">请点击这里注册</a>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</body>
+
+</html>
