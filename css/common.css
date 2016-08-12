@@ -37,3 +37,6 @@ body {
 .FontSize-XL{
 	font-size: 0.32rem;
 }
+.clearBoth{
+	clear: both;
+}

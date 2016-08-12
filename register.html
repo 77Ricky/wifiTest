@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>会员注册</title>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+			<link rel="stylesheet" type="text/css" href="./css/common.css" />
+			<link rel="stylesheet" type="text/css" href="./css/wifi.css" />
+			<link rel="stylesheet" type="text/css" href="./css/register.css" />
+			<link rel="stylesheet" type="text/css" href="./css/switchery.min.css" />
+			<script type="text/javascript" src="./scripts/viewport.js"></script>
+			<script type="text/javascript" src="./scripts/register.js"></script>
+	</head>
+	<body>	
+		<div class="wifi-content">
+			<div class="top">
+				<span class="back"></span>
+				<span class="topSpan FontSize-M">会员注册</span>
+			</div>
+			<div class="res-cell">
+				<form id="registerFrom" action="#springUrl('/register/getRegisterMesReg.html')" method="post" >
+				    <input type="hidden" value="${errorCode}" name="errorCode" id="errorCode"/>
+				    <input type="hidden" value="${error}" name="error" id="error"/>
+					<div class="login-user-Wrap changeH">
+						<span class="login-input-tip">手机号码 |</span> 
+						<span class="login-input-info"> 
+						<input id="mobile" type="text" placeholder="请输入您要注册的手机号码" name="mobile" value="" onkeydown="return quickQueryCust(event);"/></span>
+					</div>
+					<div class="login-user-Wrap changeH common-Realtive">
+						<span class="login-input-tip">验&nbsp;证&nbsp;码 |</span> 
+						<span class="login-input-info" style="width: 2.0rem;"> 
+							<input type="text" id="verifyCode" name="verifyCode" placeholder="输入验证码" style="width: 2.0rem;" onkeydown="return quickQueryCust(event);"  /></span> 
+						<span class="login-input-info" style="width: 2.0rem;"> 
+						<input type="image" class="imageCode" id="vlidateImage" src='#springUrl("/verifyCode.images")' alt="点击刷新" onclick="javascript:changeVlidateImage(event);return false;" style="width: 2rem;height: 0.66rem;" /></span>   	
+					</div>
+					<div class="login-user-Wrap changeH common-Realtive">
+						<a id="sendRandomPassword" href="javascript:void(0);" class="phoneMesTime" onclick="sendMobileCaptcha();" >手机验证码(60s)</a>
+						<span class="login-input-tip changeW">手机验证码 |</span> 
+						<span class="login-input-info changeW phoneMes"> 
+							<input type="text" placeholder="手机验证码" id="randomPassword" name="randomPassword" onkeydown="return quickQueryCust(event);" />
+						</span>
+					</div>
+					<div class="clearBoth"></div>
+					<div class="login-user-Wrap changeH">
+						<span class="login-input-tip">登录密码 |</span> 
+						<span class="login-input-info"> 
+							<input id="password0" type="password" placeholder="请设置登录密码" value="" name="password0" onkeydown="return quickQueryCust(event);"/>
+						</span>
+					</div>
+					<div class="login-user-Wrap changeH">
+						<span class="login-input-tip">密码确认 |</span> 
+						<span class="login-input-info">
+							<input id="password1" type="password" placeholder="请确认登录密码" value="" name="password1" onkeydown="return quickQueryCust(event);" />
+						</span>
+					</div>
+					<div class="">
+						<div class="noticeTip">*密码中的英文字母不区分大小写。</div>
+						<div class="notice-checkBox-noticeInfo no-float">
+							<label for="agree" class="label_check boxLabel" > 
+							    <span class="notice-noticeInfo" onclick="submit_notice_span();">
+							    	我已阅读并已同意注册须知，点击查看注册须知。 
+							    	<span class="notice-FormItem">
+										<input type="checkbox" name="isRules" id="isRules" class="isRules" value="" checked />
+							    	</span>
+							    </span>	    
+							</label>
+						</div>
+					</div>
+					<div class="login-user-btn-wrap registerBottomGap">
+						<input id="returnUrl" type="hidden" value="$returnUrl" name="returnUrl" />
+						<a class="login-user-btn"  id="submitButton" href="javascript:void(0)">注&nbsp;&nbsp;册</a>
+					</div>
+					<div class="cua-cell">
+						<div class="cuaImg"></div>
+						<div class="cuaText">您还可以下载中国联航APP完成会员注册</div>
+						<div class="cuaText">APP可使用机场免费WIFI下载</div>
+					</div>
+				</form>
+			</div>
+		  	
+			<script src="./scripts/switchery.min.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">	      
+		      var isRules = document.querySelector('.isRules'); 
+		      var switchery = new Switchery(isRules, { color: '#db5554' });
+		      
+		      $(isRules).unbind('click')[CLICK](function(){
+		    	  if(isRules.checked){
+		    	  	$("#submitButton").css('background','#df3538');
+		    	  }else{
+		    	  	$("#submitButton").css('background','#ABACAC');
+		    	  }
+	      		});
+		      $("#submitButton").unbind('click')[CLICK](function(){
+	    	  	if(isRules.checked){
+	    	  		submitRandomPasswordForm();
+	    	  	}
+	    	  })
+			</script>
+		</div>
+	</body>
+</html>
